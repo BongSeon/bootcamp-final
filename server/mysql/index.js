@@ -11,7 +11,11 @@ const pool = mysql.createPool({
 });
 
 /* 쿼리문을 실행하고 결과를 반환하는 함수 */
+
 const query = async (alias, values) => {
+  if (sql[alias].includes("like")) {
+    values = "%" + values + "%";
+  }
   return new Promise((resolve, reject) =>
     pool.query(sql[alias], values, (error, results) => {
       if (error) {

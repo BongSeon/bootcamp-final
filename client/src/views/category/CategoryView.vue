@@ -7,12 +7,12 @@
           type="search"
           class="form-control"
           v-model.trim="searchName"
-          @keyup.enter="getCustomers"
+          @keyup.enter="doSearch"
           placeholder="Name"
         />
       </div>
       <div class="col-12">
-        <button class="btn btn-primary me-1" @click="getCustomers">조회</button>
+        <button class="btn btn-primary me-1" @click="doSearch">조회</button>
         <button
           class="btn btn-success me-1"
           data-bs-toggle="modal"
